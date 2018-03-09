@@ -10,6 +10,7 @@ RUN set -e;\
     git \
     gzip \
     libpq-dev \
+    libtinfo-dev \
     postgresql \
     postgresql-client \
     python \
