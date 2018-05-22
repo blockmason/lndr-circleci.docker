@@ -29,8 +29,3 @@ RUN set -e;\
   awscli-bundle/install -i /usr/share/aws -b /bin/aws;\
   rm -vfR awscli-bundle;\
   curl -sSL https://get.haskellstack.org/ | sh;
-
-
-
-
-
