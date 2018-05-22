@@ -20,4 +20,17 @@ RUN set -e;\
   -y;\
   apt-get --purge autoremove;\
   apt-get clean;\
+  (\
+    ARCHIVE_FILE="$(mktemp awscli-XXXXX.zip)";\
+    curl -sSL 'https://s3.amazonaws.com/aws-cli/awscli-bundle.zip' -o "${ARCHIVE_FILE}";\
+    unzip "${ARCHIVE_FILE}";\
+    rm -vf "${ARCHIVE_FILE}";\
+  );\
+  awscli-bundle/install -i /usr/share/aws -b /bin/aws;\
+  rm -vfR awscli-bundle;\
   curl -sSL https://get.haskellstack.org/ | sh;
+
+
+
+
+
